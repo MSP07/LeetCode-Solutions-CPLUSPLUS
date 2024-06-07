@@ -6,15 +6,15 @@
 //if we successfully create groups for all elements in the array we return true else false
 class Solution{
 private:
-    bool successor(vector<int>& hands,int i,int groupSize,int cnt){
-        int next = hands[i]+1;
-        hands[i] = -1;
+    bool successor(vector<int>& hand,int i,int groupSize,int cnt){
+        int next = hand[i]+1;
+        hand[i] = -1;
         i += 1;
         cnt++;
-        while(i<hands.size() && cnt<groupSize){
-            if(hands[i]==next){
-                next = hands[i]+1;
-                hands[i]=-1;
+        while(i<hand.size() && cnt<groupSize){
+            if(hand[i]==next){
+                next = hand[i]+1;
+                hand[i]=-1;
                 cnt++;
             }
             i++;
@@ -22,13 +22,13 @@ private:
         return cnt == groupSize;
     }
 public:
-    bool isNStraightHands(vector<int>&hands,int groupSize){
+    bool isNStraightHands(vector<int>&hand,int groupSize){
         ios_base::sync_with_stdio(0);
         cin.tie(0);
         int cnt = 0;
-        sort(hands.begin(),hands.end());
-        for(int i=0;i<hands.size();i++){
-            if(!successor(hands,i,groupSize,cnt))return false;
+        sort(hand.begin(),hand.end());
+        for(int i=0;i<hand.size();i++){
+            if(!successor(hand,i,groupSize,cnt))return false;
         }
         return true;
     }
