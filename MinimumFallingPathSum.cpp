@@ -25,7 +25,7 @@ public:
             }
         }
         int result = INT_MAX;
-        for(int j=0;;j<n;j++){
+        for(int j=0;j<n;j++){
             result = min(result,dp[0][j]);
         }
         return result;
