@@ -35,7 +35,7 @@ public:
         }
         long long maxProd = 0;
         for(int i=0;i<n;++i){
-            long long sum = prefixSum[right[i]-1] - prefixSum[left[i]];
+            long long sum = prefixSum[right[i]+1] - prefixSum[left[i]];
             maxProd = max(maxProd,sum*nums[i]);
         }
         return maxProd % mod;
