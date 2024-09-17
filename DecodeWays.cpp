@@ -11,7 +11,7 @@ private:
         if(s[i]=='0')return 0;
         if(dp[i]!=-1)return dp[i];
         int ways = findWays(i+1,s,dp,n);
-        if(i<n-1 && s.substr(i-2,2) < "27"){
+        if(i<n-1 && s.substr(i,2) < "27"){
             ways += findWays(i+2,s,dp,n);
         }
         return dp[i] = ways;
