@@ -19,9 +19,9 @@ public:
                 TreeNode* curr = q.front();
                 q.pop();
                 if(level%2){
-                    if(curr->val%2 || curr->val <= prev)return false;
+                    if(curr->val%2 || curr->val >= prev)return false;
                 }else{
-                    if(curr->val%2==0 || curr->val >= prev)return false;
+                    if(curr->val%2==0 || curr->val <= prev)return false;
                 }
                 prev = curr->val;
                 if(curr->left)q.push(curr->left);
