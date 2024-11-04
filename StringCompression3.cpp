@@ -7,16 +7,20 @@
 class Solution{
 public:
     string compressedString(string word){
-        int n = word.length(), i = 0, j = 0,count = 0;
-        string comp = "";
-        while(j<n){
-            count = 0;
-            while(j<n && word[i]==word[j] && count<9){
-                j++;
+        ios_base::sync_with_stdio(0);
+        cin.tie(0);
+        int n = word.length();
+        string comp;
+        comp.reserve(n);
+        int i = 0;
+        while(i<n){
+            char curr = word[i];
+            int count = 0;
+            while(i<n && word[i]==curr && count<9){
+                i++;
                 count++;
             }
             comp += to_string(count) + word[i];
-            i=j;
         }
         return comp;
     }
