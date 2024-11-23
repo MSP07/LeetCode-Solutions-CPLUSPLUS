@@ -1,6 +1,6 @@
 /*approach
   matrix,simulation
-  we simply follow the given rules and form the matrix*/
+  we simply follow the given rules and form the vector*/
 class Solution {
 public:
     vector<int> findDiagonalOrder(vector<vector<int>>& mat) {
