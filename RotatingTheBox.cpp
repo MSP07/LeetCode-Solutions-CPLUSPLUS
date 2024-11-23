@@ -17,7 +17,7 @@ public:
                     empty = j-1;
                 }else if(box[i][j]=='#'){
                     box[i][j] = '.';
-                    box[i][empty] = '#';
+                    box[i][empty--] = '#';
                 }
             }
         }
