@@ -21,6 +21,8 @@ public:
             if(start[i]!=target[j])return false;
             if(start[i]=='L' && i<j)return false;
             if(start[i]=='R' && i>j)return false;
+            i++;
+            j++;
         }
         return true;
     }
