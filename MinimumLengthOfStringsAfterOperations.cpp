@@ -1,5 +1,5 @@
 /*approach
-  string, counting
+  string, counting, hashmap
   as per the given conditions we need to find char such that
   the same char exists in left and right and we remove the left and
   right char. Optimal way to solve this will be is to count the same chars
