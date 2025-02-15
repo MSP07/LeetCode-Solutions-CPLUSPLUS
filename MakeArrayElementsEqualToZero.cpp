@@ -1,7 +1,8 @@
 /*approach
   array
-  we simply add 2 if the curr and last elements are equal else if their
-  diff is 1 we add 1 and finally return the ans*/
+  we simply add 2 if the last element is 2 times of curr element 
+  when the curr is 0 indicating the last element should also be zero 
+  else if their diff is 1 we add 1 and finally return the ans*/
 class Solution{
 public:
     int countValidSelections(vector<int>& nums){
