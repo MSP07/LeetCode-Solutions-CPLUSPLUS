@@ -1,24 +1,21 @@
-bool cmp(vector<int> &a, vector<int> &b){
-    return a[0] < b[0];
-}
+/*approach
+  sorting
+  we first sort the given array and the start and end will be[0] and [1] element
+  we will count free as start-latest-1 and keep track of max latest and finally
+  add days-latest to the free variable and return the free as ans*/
 class Solution {
 public:
-    int countDays(int days, vector<vector<int>>& m) { 
-        ios_base::sync_with_stdio(0);
-        cin.tie(0);
-        int n = m.size();
-        sort(m.begin(), m.end(), cmp); 
-        int count = 0;
-        count += abs(m[0][0] - 1);
-        for(int i = 1; i < n; i++){
-            if(m[i][0] <= m[i-1][1]){ 
-                if(m[i][1] < m[i-1][1]) m[i][1] = m[i - 1][1]; 
-            }else{ 
-                int dy = m[i][0] - m[i-1][1];
-                count += dy - 1; 
+    int countDays(int days, vector<vector<int>>& meetings) {
+        int free = 0, latest = 0;
+        sort(meetings.begin(),meetings.end());
+        for(auto& meeting:meetings){
+            int start = meeting[0], end = meeting[1];
+            if(start>latest+1){
+                free += start-latest-1;
             }
+            latest = max(latest,end);
         }
-        count += abs(m[n-1][1] - days);
-        return count;
+        free += days - latest;
+        return free;
     }
 };
